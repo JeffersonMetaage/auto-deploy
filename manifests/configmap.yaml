@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: auto-deploy-wf-config
+  namespace: auto-deploy-ns
+  labels:
+    app.kubernetes.io/name: auto-deploy-wf
+    kubernetes.azure.com/generator: devhub
+data:
