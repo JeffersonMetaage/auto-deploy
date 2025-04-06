@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: auto-deploy-wf
+  namespace: auto-deploy-ns
+  labels:
+    app.kubernetes.io/name: auto-deploy-wf
+    kubernetes.azure.com/generator: devhub
+spec:
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: auto-deploy-wf
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
