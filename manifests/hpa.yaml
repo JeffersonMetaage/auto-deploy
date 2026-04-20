@@ -1,0 +1,22 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: aks-lab20-wf
+  labels:
+    app.kubernetes.io/name: aks-lab20-wf
+    app.kubernetes.io/part-of: aks-lab20-wf-project
+    kubernetes.azure.com/generator: devhub
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: aks-lab20-wf
+  minReplicas: 1
+  maxReplicas: 1
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 80
