@@ -1,0 +1,13 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: aks-lab20-wf
+  labels:
+    app.kubernetes.io/name: aks-lab20-wf
+    app.kubernetes.io/part-of: aks-lab20-wf-project
+    kubernetes.azure.com/generator: devhub
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: aks-lab20-wf
