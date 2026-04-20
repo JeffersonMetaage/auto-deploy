@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aks-lab03-wf-config
+  namespace: sample-app-namespace-1776658635524
+  labels:
+    app.kubernetes.io/name: aks-lab03-wf
+    kubernetes.azure.com/generator: devhub
+data:
